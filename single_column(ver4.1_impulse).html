@@ -1961,8 +1961,8 @@
             }
             ctx.stroke(); ctx.setLineDash([]);
 
-            // 数値表示
-            const maxForceEq = scaleMaxDisp * k;
+            // 数値表示 (修正: scaleMaxDispではなくmaxAbsVal(実測値)を使用)
+            const maxForceEq = maxAbsVal * k;
             ctx.fillStyle = '#000000'; ctx.font = 'bold 11px sans-serif';
             ctx.textAlign = 'left'; ctx.textBaseline = 'top'; ctx.fillText(`+${maxForceEq.toFixed(2)} kN`, 2, 2);
             ctx.textBaseline = 'bottom'; ctx.fillText(`-${maxForceEq.toFixed(2)} kN`, 2, H - 2);
